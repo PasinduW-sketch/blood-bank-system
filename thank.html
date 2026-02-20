@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
+<style>
+  /* ===== FIXED APPROVED COLOR THEME ===== */
+  :root {
+    --bg-gradient-start: #0f2027;
+    --bg-gradient-end: #2c5364;
+    --heading-color: #ffffff;
+    --label-color: #0b5ed7;
+    --button-color: #0d6efd;
+    --button-hover: #084298;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--heading-color);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+  }
+
+  .form-container {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+  }
+
+  /* ===== BADGE ===== */
+  .badge-premium {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 15px;
+    background-color: var(--button-color);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* ===== INFO BOX ===== */
+  .info-box {
+    background: linear-gradient(135deg, #e7f1ff, #f8fbff);
+    border-left: 5px solid var(--button-color);
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    color: #084298;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--button-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 600px) {
+    .form-container {
+      padding: 25px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- Heading outside the box -->
+  <h1>THANK YOU FOR USING OUR SYSTEM</h1>
+
+  <div class="form-container">
+
+    <!-- Badge -->
+    <span class="badge-premium">Thank You</span>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      We appreciate your time and trust in our hospital management system.
+    </div>
+
+    <form action="hospital.html">
+      <input class="submit-btn" type="submit" value="Previous Page">
+    </form>
+
+  </div>
+
+</body>
+</html>

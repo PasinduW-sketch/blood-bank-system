@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Details Form</title>
+  <style>
+    /* ===== FIXED APPROVED COLOR THEME ===== */
+    :root {
+      --bg-gradient-start: #0f2027;
+      --bg-gradient-end: #2c5364;
+      --heading-color: #ffffff;
+      --label-color: #0b5ed7;
+      --button-color: #0d6efd;
+      --button-hover: #084298;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--heading-color);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.96);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      max-width: 420px;
+      width: 90%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-container:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ===== BADGE ===== */
+    .badge-premium {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 15px;
+      background-color: var(--button-color);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* ===== INFO BOX ===== */
+    .info-box {
+      background: linear-gradient(135deg, #e7f1ff, #f8fbff);
+      border-left: 5px solid var(--button-color);
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: #084298;
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: var(--label-color);
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--button-color);
+      box-shadow: 0 0 0 3px rgba(13,110,253,0.2);
+    }
+
+    .gender-options {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .gender-options label {
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--button-color);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--button-hover);
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Heading outside the box -->
+  <h1>Patient Details</h1>
+
+  <div class="form-container">
+
+    <!-- Badge -->
+    <span class="badge-premium">Patient Registration</span>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      Enter correct patient information for official medical records.
+    </div>
+
+    <form method="POST" action="../php/patient.php" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" name="age" id="age" />
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="Male" /> Male</label>
+          <label><input type="radio" name="gender" value="Female" /> Female</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" />
+      </div>
+      <button class="submit-btn" type="submit" name="reg">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

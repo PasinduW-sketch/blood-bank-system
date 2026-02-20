@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Bank Details</title>
+
+  <style>
+    /* ===== FIXED APPROVED COLOR THEME ===== */
+    :root {
+      --bg-gradient-start: #0f2027;
+      --bg-gradient-end: #2c5364;
+      --heading-color: #0d6efd;
+      --label-color: #0b5ed7;
+      --button-color: #0d6efd;
+      --button-hover: #084298;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 100px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--heading-color);
+      margin-bottom: 10px;
+    }
+
+    .badge-premium {
+      display: inline-block;
+      background-color: var(--button-color);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0 auto 20px;
+    }
+
+    .info-box {
+      background: linear-gradient(135deg, #e7f1ff, #f8fbff);
+      border-left: 5px solid var(--button-color);
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: #084298;
+      font-size: 14px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: var(--label-color);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--button-color);
+      box-shadow: 0 0 0 3px rgba(13,110,253,0.2);
+    }
+
+    .premium-divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--button-color), transparent);
+      margin: 20px 0;
+    }
+
+    button[type="submit"] {
+      padding: 12px;
+      background-color: var(--button-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--button-hover);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 15px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Blood Bank Details</h1>
+    <div style="text-align:center;">
+      <span class="badge-premium">Verified Medical Entry</span>
+    </div>
+
+    <div class="info-box">
+      Please enter accurate blood bank details for hospital records.
+    </div>
+
+    <form method="POST" action="../php/bank.php" enctype="multipart/form-data">
+      <label for="name">Bank Name</label>
+      <input type="text" name="name" id="name" size="25" required>
+
+      <label for="blood_type">Blood Type</label>
+      <input type="text" name="blood_type" id="blood_type" size="20" required>
+
+      <hr class="premium-divider">
+
+      <label for="order">Order</label>
+      <input type="text" name="order" id="order" required>
+
+      <label for="issue">Issue</label>
+      <input type="text" name="issue" id="issue" size="30" required>
+
+      <button type="submit" name="reg">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

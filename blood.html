@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Details</title>
+
+  <style>
+    /* ===== FIXED APPROVED COLOR THEME ===== */
+    :root {
+      --bg-gradient-start: #0f2027;
+      --bg-gradient-end: #2c5364;
+      --heading-color: #0d6efd;
+      --label-color: #0b5ed7;
+      --button-color: #0d6efd;
+      --button-hover: #084298;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 100px auto;
+      background-color: rgba(255, 255, 255, 0.96);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--heading-color);
+      margin-bottom: 10px;
+    }
+
+    .badge-premium {
+      display: inline-block;
+      background-color: var(--button-color);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      background: linear-gradient(135deg, #e7f1ff, #f8fbff);
+      border-left: 5px solid var(--button-color);
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: #084298;
+      font-size: 14px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: var(--label-color);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--button-color);
+      box-shadow: 0 0 0 3px rgba(13,110,253,0.2);
+    }
+
+    button[type="submit"] {
+      padding: 12px;
+      background-color: var(--button-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--button-hover);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 50px 15px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>BLOOD DETAILS</h1>
+
+    <div style="text-align:center;">
+      <span class="badge-premium">Medical Record</span>
+    </div>
+
+    <div class="info-box">
+      Enter blood information carefully for accurate hospital records.
+    </div>
+
+    <form method="POST" action="../php/blood.php" enctype="multipart/form-data">
+      <label for="code">Blood Code</label>
+      <input type="text" name="code" id="code" required>
+
+      <label for="type">Blood Type</label>
+      <input type="text" name="type" id="type" required>
+
+      <button type="submit" name="reg">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

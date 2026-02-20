@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blood Donation System</title>
+
+<style>
+  /* ===== FIXED APPROVED COLOR THEME ===== */
+  :root {
+    --bg-gradient-start: #0f2027;
+    --bg-gradient-end: #2c5364;
+    --heading-color: #ffffff;
+    --button-color: #0d6efd;
+    --button-hover: #084298;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    color: var(--heading-color);
+    text-align: center;
+    font-size: 36px;
+    margin: 30px 0 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-items: center;
+  }
+
+  /* ===== GRID BUTTONS ===== */
+  .grid-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 250px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--button-color), #3b8dff);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 14px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .grid-button::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease;
+  }
+
+  /* Different icons per button using pseudo elements */
+  .grid-button.donator::before { background-color: #f44336; }   /* red droplet */
+  .grid-button.patient::before { background-color: #ff9800; }   /* orange circle */
+  .grid-button.bank::before { background-color: #4caf50; }      /* green box */
+  .grid-button.blood::before { background-color: #9c27b0; }     /* purple droplet */
+  .grid-button.hospital::before { background-color: #03a9f4; }  /* blue cross */
+  .grid-button.receptions::before { background-color: #ffeb3b; }/* yellow icon */
+
+  .grid-button span {
+    margin-left: 35px; /* space for icon */
+    transition: margin-left 0.3s ease;
+  }
+
+  .grid-button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .grid-button:hover::before {
+    transform: translateX(10px);
+  }
+
+  .grid-button:hover span {
+    margin-left: 45px;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    .grid-button {
+      height: 60px;
+      font-size: 16px;
+    }
+
+    .grid-button span {
+      margin-left: 30px;
+    }
+
+    .grid-button:hover span {
+      margin-left: 38px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <h1>ENTER BLOOD DONATION SYSTEM DETAILS</h1>
+
+  <div class="grid-container">
+    <a href="donator.html" class="grid-button donator"><span>DONATOR</span></a>
+    <a href="patient.html" class="grid-button patient"><span>PATIENT</span></a>
+    <a href="bank.html" class="grid-button bank"><span>BLOOD BANK</span></a>
+    <a href="blood.html" class="grid-button blood"><span>BLOOD</span></a>
+    <a href="hospital.html" class="grid-button hospital"><span>HOSPITAL</span></a>
+    <a href="receptions.html" class="grid-button receptions"><span>RECEPTIONS</span></a>
+  </div>
+
+</body>
+</html>
